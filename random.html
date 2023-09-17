@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<head>
+    <title>Memory power</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<style>
+    .btn{
+        display:grid;
+        width: 30vw;
+    }
+    input{
+        width: 24vw;
+        
+        
+    }
+</style>
+<body>
+
+
+<div class="container">
+
+<h1>Memory power</h1>
+
+<p>Enter the values you seen!</p>   
+<div id="arr1" class="btn btn-info" >0</div><br>
+<div id="next" class="btn btn-info">start</div>
+<!-- <div id="arr2" class="btn btn-info"><input type=""</div>  -->
+<!-- <span class="btn btn-info"><input type="text" id="arr2"></span> -->
+<br>
+<div id="result" class="btn btn-info">result</div><br>
+
+
+<p id="demo" class="btn btn-info">your results </p>
+</div>
+
+<script>
+const arr1 = [];
+const arr2 = [];
+var num=Math.random()*6;
+
+for( var i =0;i<=2;i++){
+ 
+    var num=Math.random()*6;
+    
+    arr1[i]= Math.ceil(num)
+  
+}
+
+document.getElementById("arr1").innerHTML = arr1;
+
+document.getElementById("next").addEventListener("click",start);
+document.getElementById("result").addEventListener("click", results);
+
+function start()
+{
+    
+    document.getElementById("arr1").innerHTML = "enter numbers";
+    for( var i =0;i<=2;i++)
+    {
+   var input= prompt("enter your numbers");
+    arr2[i]=parseInt(input) 
+    }
+}
+
+
+function results(){
+    
+    for( var i =0;i<=2;i++)
+    {
+    if(arr1[i]==arr2[i])
+        {
+   		
+    document.getElementById("demo").innerHTML = " you won the game";
+        }
+   
+   else
+        {
+   
+   		document.getElementById("demo").innerHTML = "you lose ";
+        }
+
+   
+   
+   
+
+    }
+
+
+}
+
+</script>
+
+</body>
+</html>
